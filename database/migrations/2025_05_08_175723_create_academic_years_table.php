@@ -12,6 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // tahun academic
         Schema::create('academic_years', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);

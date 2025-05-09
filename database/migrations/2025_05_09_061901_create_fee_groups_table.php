@@ -10,6 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
+        // golongan ukt
         Schema::create('fee_groups', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('group')->default(1);

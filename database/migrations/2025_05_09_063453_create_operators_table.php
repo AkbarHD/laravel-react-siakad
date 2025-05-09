@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // operator / karyawan
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

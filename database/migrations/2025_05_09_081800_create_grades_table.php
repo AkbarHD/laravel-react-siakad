@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // nilai
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id')->constrained()->onDelete('cascade');
