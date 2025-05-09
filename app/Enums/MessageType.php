@@ -11,6 +11,7 @@ enum MessageType: string
 
     public function message(string $entity = '', ?string $error = null):string
     {
+        // jika error ada
         if($this === MessageType::ERROR && $error){
             return "{$this->value} {$error}";
         }

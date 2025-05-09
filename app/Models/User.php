@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -28,6 +29,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    // fungsi dari $hidden itu untuk menyembunyikan isi database, jadi tidak dilihat oleh user
     protected $hidden = [
         'password',
         'remember_token',
