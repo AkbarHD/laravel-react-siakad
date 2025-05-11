@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudyPlan extends Model
 {
+    // krs
     protected $table = 'study_plans';
 
     protected $fillable = [
@@ -22,5 +23,20 @@ class StudyPlan extends Model
         return [
             'status' => StudyPlanStatus::class,
         ];
+    }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function academicYear()
+    {
+        return $this->belongsTo(AcademicYear::class);
+    }
+
+    public function schedules()
+    {
+        return $this->belongsToMany(Schedule::class, 'study_plan_schedules', 'study_plan_id', 'schedule_id')->withTimestamps();
     }
 }

@@ -17,4 +17,14 @@ class Departmen extends Model
             set: fn($value) => strtoupper($value),
         );
     }
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class, 'faculty_id');
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

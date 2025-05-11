@@ -19,4 +19,9 @@ class Faculty extends Model
             set: fn($value) => strtoupper($value),
         );
     }
+
+    public function departmens()
+    {
+        return $this->hasMany(Departmen::class);
+    }
 }

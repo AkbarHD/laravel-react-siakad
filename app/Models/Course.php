@@ -17,4 +17,34 @@ class Course extends Model
         'teacher_id',
         'academic_year_id',
     ];
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class, 'faculty_id');
+    }
+
+    public function departmen()
+    {
+        return $this->belongsTo(Departmen::class, 'departmen_id');
+    }
+
+    public function academicYear()
+    {
+        return $this->belongsTo(AcademicYear::class, 'academic_year_id');
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class);
+    }
 }

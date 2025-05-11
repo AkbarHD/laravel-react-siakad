@@ -14,4 +14,20 @@ class Operator extends Model
         'departmen_id',
         'employee_number',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class, 'faculty_id');
+    }
+
+    public function departmen()
+    {
+        return $this->belongsTo(Departmen::class, 'departmen_id');
+    }
+
 }

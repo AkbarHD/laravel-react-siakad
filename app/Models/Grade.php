@@ -16,4 +16,19 @@ class Grade extends Model
         'section',
         'category',
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }
