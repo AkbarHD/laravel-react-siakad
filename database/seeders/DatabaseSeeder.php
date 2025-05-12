@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
 
         // panggil FacultySeeder untk dijalankan
         $this->call(FacultySeeder::class);
+        $this->call(FeeGroupSeeder::class);
     }
 }
