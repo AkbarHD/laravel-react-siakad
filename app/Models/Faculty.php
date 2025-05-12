@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Faculty extends Model
 {
+    // jika menggunakan factory wajib menggunakan ini
+    use HasFactory;
     protected $table = 'faculties';
     protected $fillable = ['name', 'code', 'logo', 'slug'];
 
