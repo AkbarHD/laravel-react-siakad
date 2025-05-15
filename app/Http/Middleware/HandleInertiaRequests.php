@@ -41,7 +41,7 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user() ? new UserSingleResoure($request->user()) : null,
             ],
             // utk falsh message global. karena react tdk bisa baca .blade
-            'flash_message' => fn() => [
+            'flash_message' => fn() => [ // akan mengirim ke utils.js
                     'type' => $request->session()->get('type'),
                     'message' => $request->session()->get('message'),
             ],
@@ -52,7 +52,7 @@ class HandleInertiaRequests extends Middleware
 
             'academic_year' => fn() => AcademicYear::query()->where('is_active', true)->first(),
 
-            'checkFee' => fn() => fn() => $request->user() && $request->user()->student
+            'checkFee' => fn() => fn() => $request->user() && $request->user()->student // yang pasti dia sudah menjadi mahasiswa
             ? Fee::query()
                 ->where('student_id', auth()->user()->student->id)
                 ->where('academic_year_id', activeAcademicYear()->id)
