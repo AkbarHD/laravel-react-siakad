@@ -37,7 +37,7 @@ export default function ComboBox({items, selectedItem, onSelect, placeholder = '
                     <Command>
                         <CommandInput placeholder={placeholder} className="h-9">
 
-                            <CommandEmpty>No results found.</CommandEmpty>
+                            <CommandEmpty>Result not found.</CommandEmpty>
 
                             <CommandGroup>
                                 {items.map((item, index) => {
